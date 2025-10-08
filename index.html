@@ -62,11 +62,32 @@
     video{width:100%;display:block}
 
   /* ---------------------- Floating Hearts & Balloons ---------------------- */
-  .hearts{position:fixed;inset:0;pointer-events:none;z-index:20}
-  .heart{position:absolute;width:28px;height:28px;transform:rotate(-45deg);opacity:0.12;will-change:transform,opacity}
-  .heart:before,.heart:after{content:'';position:absolute;width:28px;height:28px;border-radius:50%;background:white}
-  .heart:before{top:-14px}
-  .heart:after{left:14px}
+  .hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .heart {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    transform: rotate(-45deg);
+    opacity: 0.12;
+  }
+
+  .heart:before,
+  .heart:after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+  }
+
+  .heart:before { top: -14px; }
+  .heart:after { left: 14px; }
 
   .balloon{position:fixed;bottom:-120px;width:40px;height:52px;border-radius:50% 50% 45% 45%;opacity:0.95}
 
