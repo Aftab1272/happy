@@ -607,30 +607,21 @@
     }
     confettiTick();
 
-    /* ---------------------- Floating hearts in background ---------------------- */
-    const heartsContainer = document.getElementById('hearts');
+    /* ---------------------- HEART ANIMATION SECTION ---------------------- */
+    const heartsContainer = $('#hearts');
     function spawnHeart(){
-      const h = document.createElement('div');
-      h.className = 'heart';
-      h.style.left = Math.random() * 100 + '%';
+      const h = document.createElement('div'); h.className='heart';
+      h.style.left = Math.random()*100 + '%';
       h.style.bottom = '-40px';
-      h.style.width = (10 + Math.random() * 36) + 'px';
+      h.style.width = (10+Math.random()*36)+'px';
       h.style.height = h.style.width;
-      h.style.opacity = 0.08 + Math.random() * 0.12;
+      h.style.opacity = 0.08 + Math.random()*0.12;
       heartsContainer.appendChild(h);
-
-      const dur = 8 + Math.random() * 16;
-      h.animate(
-        [
-          { transform: 'translateY(0) scale(1)' },
-          { transform: `translateY(-${200 + Math.random() * 600}px) scale(1.2)` }
-        ],
-        { duration: dur * 1000, iterations: 1, easing: 'linear' }
-      );
-
-      setTimeout(() => h.remove(), (dur + 0.8) * 1000);
+      const dur = 8 + Math.random()*16;
+      h.animate([{transform:'translateY(0) scale(1)'},{transform:`translateY(-${200+Math.random()*600}px) scale(1.2)`}],{duration:dur*1000,iterations:1,easing:'linear'});
+      setTimeout(()=>h.remove(), (dur+0.8)*1000);
     }
-  let heartInterval = setInterval(spawnHeart, 700);
+    let heartInterval = setInterval(spawnHeart,700);
 
     /* ---------------------- Floating balloons (decorative) ---------------------- */
     function spawnBalloon(){
